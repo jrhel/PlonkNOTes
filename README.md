@@ -1,6 +1,6 @@
 # PlonkNOTes
 
-PlonkNOTes is a combined application for make your own notes about wines and crowdsourcing experiences of them. A user will be able to:
+PlonkNOTes is a combined application for making & saving your own notes about wines and crowdsourcing experiences of them. A user will be able to:
 - create an account & sign in & out of the application,
 - make their own wine-specific notes, including;
   - aroma description,
@@ -13,7 +13,7 @@ PlonkNOTes is a combined application for make your own notes about wines and cro
 - search for wines by their attributes (e.g. name, producer, or AOC)
 - see how a wine has been described, scored, and commented by themselves as well as other users,
 - save a wine for future reference,
-- add a missing wine to the database, including its;
+- add a missing wine to the application, including its;
   - name,
   - producer,
   - vintage/cuvée,
