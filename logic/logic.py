@@ -17,3 +17,12 @@ def verify_login(username: str, password: str):
         return True
     else:
         return False
+    
+def check_available_username(username: str):
+    existing_user = userDAO.get_user(username)
+    if existing_user == None:
+        print("No existing user!")
+        return True
+    else:
+        print("EXISTING USER!")
+        return False

@@ -6,8 +6,12 @@ def create_user(username: str, password_hash: str):
 
 def get_user(username):
     params = [username]
-    result = db_connection_handler.query("SELECT * FROM User WHERE username = ?", params)[0]
-    user = {}
+    result = db_connection_handler.query("SELECT * FROM User WHERE username = ?", params)
+    if len(result) == 0:
+        return None
+    else:
+        user = {}
+        result =  result[0]
     user["id"] = result[1]
     user["username"] = result[1]
     user["password_hash"] = result[2]

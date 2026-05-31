@@ -28,10 +28,14 @@ def create_account():
     password2 = request.form["password2"]
     if password1 != password2:        
         return "Passwords do not match!"
-    else:
+    elif logic.check_available_username(username):
+        print("APP: username", username, "AVAILABLE!")
         logic.create_user(username, password1)
         session["username"] = username
         return redirect("/user_page")
+    else:
+        print("APP: Username", username, "TAKEN!")
+        return redirect("/sign_up")
 
 @app.route("/user_page")
 def user_page():
