@@ -8,7 +8,10 @@ def get_connection():
 
 # Verifies integrity of database
 def verify_database():
-    user_table = "CREATE TABLE IF NOT EXISTS User (id integer PRIMARY KEY, username TEXT UNIQUE, password_hash TEXT)"
+    user_table = "CREATE TABLE IF NOT EXISTS User (id INTEGER PRIMARY KEY, username TEXT UNIQUE, password_hash TEXT)"
+    variety_table = "CREATE TABLE IF NOT EXISTS Variety (id INTEGER PRIMARY KEY, grape TEXT UNIQUE)"
+    wine_table = "CREATE TABLE IF NOT EXISTS Wine (id INTEGER PRIMARY KEY, name TEXT, classification TEXT, producer TEXT, vintage INTEGER, type TEXT)"
+    wine_variety_table = "CREATE TABLE IF NOT EXISTS Wine_Variety (id INTEGER PRIMARY KEY, wine_id INTEGER, variety_id, FOREIGN KEY (wine_id) REFERENCES Wine(id), FOREIGN KEY (variety_id) REFERENCES Variety(id))"
     database = get_connection()
     database.execute(user_table)
     database.commit()
